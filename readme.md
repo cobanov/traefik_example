@@ -1,6 +1,6 @@
-# Web Application with Traefik Reverse Proxy
+# Basic Load Balancing Example with Traefik
 
-This project sets up a web application using Flask, Docker, and Traefik as a reverse proxy. The `webapp` directory contains the Flask application, while the `traefik` directory contains configuration files for Traefik, including the static and dynamic configurations.
+This project is a simple template for setting up a basic load balancing environment using Flask (or anything) as the web application and Traefik as the reverse proxy. It demonstrates how to distribute traffic across multiple instances of a web application using Docker and Traefik's load balancing capabilities.
 
 ## Project Structure
 
@@ -15,7 +15,6 @@ This project sets up a web application using Flask, Docker, and Traefik as a rev
 ├── dynamic.yml            # Traefik dynamic routing and service configuration
 └── docker-compose.yml     # Docker Compose file for running Traefik
 ```
-
 
 ## Running the Project
 
