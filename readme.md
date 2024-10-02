@@ -59,6 +59,3 @@ This project sets up a web application using Flask, Docker, and Traefik as a rev
 ## License
 
 This project is licensed under the MIT License.
-```
-
-This `README.md` gives a brief overview of your project structure, the steps to run it, and the configuration details for Traefik. Let me know if you'd like any adjustments!
