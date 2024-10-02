@@ -1,0 +1,16 @@
+http:
+  routers:
+    webapp-router:
+      rule: "PathPrefix(`/`)"
+      service: webapp-service
+      entryPoints:
+        - web
+
+  services:
+    webapp-service:
+      loadBalancer:
+        servers:
+          - url: "http://cobanov-white:5000"
+          - url: "http://machine2_ip:5000"
+          - url: "http://machine3_ip:5000"
+          - url: "http://machine4_ip:5000"
