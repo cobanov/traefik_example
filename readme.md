@@ -19,40 +19,40 @@ This project sets up a web application using Flask, Docker, and Traefik as a rev
 
 ## Running the Project
 
-1. **Start the Flask Web Application**:
+**Start the Flask Web Application**:
 
-   Navigate to the `webapp` directory and run the following command to build and start the Flask app:
+Navigate to the `webapp` directory and run the following command to build and start the Flask app:
 
-   ```bash
-   docker-compose up -d
-   ```
+```bash
+docker-compose up -d
+```
 
-2. **Start Traefik**:
+**Start Traefik**:
 
-   Navigate to the `traefik` directory and run the following command to start the Traefik reverse proxy:
+Navigate to the `traefik` directory and run the following command to start the Traefik reverse proxy:
 
-   ```bash
-   docker-compose up -d
-   ```
+```bash
+docker-compose up -d
+```
 
-   This will start Traefik in detached mode.
+This will start Traefik in detached mode.
 
-3. **Access the Application**:
+**Access the Application**:
 
-   - The web application will be accessible on `http://machine1:5000` and `http://machine2:5000`.
-   - Traefik will route requests made to `http://localhost:80` to the appropriate web application instance.
-   - The Traefik dashboard is accessible at `http://localhost:8080`.
+- The web application will be accessible on `http://machine1:5000` and `http://machine2:5000`.
+- Traefik will route requests made to `http://localhost:80` to the appropriate web application instance.
+- The Traefik dashboard is accessible at `http://localhost:8080`.
 
 ## Traefik Configuration
 
-- **Static Configuration (`traefik.yml`)**:
-  - Defines the entry point `web` for HTTP traffic on port 80.
-  - Configures the file provider to load dynamic routing from `dynamic.yml`.
-  - Enables the Traefik API dashboard.
+**Static Configuration (`traefik.yml`)**:
+- Defines the entry point `web` for HTTP traffic on port 80.
+- Configures the file provider to load dynamic routing from `dynamic.yml`.
+- Enables the Traefik API dashboard.
 
-- **Dynamic Configuration (`dynamic.yml`)**:
-  - Defines a router for the web application, forwarding traffic to the web application service based on the prefix `/`.
-  - Load balances requests across two instances of the Flask app running on different servers (`http://machine_1:5000` and `http://machine_2:5000`).
+**Dynamic Configuration (`dynamic.yml`)**:
+- Defines a router for the web application, forwarding traffic to the web application service based on the prefix `/`.
+- Load balances requests across two instances of the Flask app running on different servers (`http://machine_1:5000` and `http://machine_2:5000`).
 
 
 
