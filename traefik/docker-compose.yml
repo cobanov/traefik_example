@@ -3,8 +3,9 @@ version: '3'
 services:
   traefik:
     image: traefik:v2.10
+    network_mode: host
     ports:
-      - "80:80"
+      - "80:80"  # Expose your custom port here
       - "8080:8080"  # Traefik dashboard
     volumes:
       - ./traefik.yml:/etc/traefik/traefik.yml
